@@ -8,6 +8,7 @@ HOW DOES IT WORK
 The algorithm works by creating a initial contour around the segmentation part with the users help. It iteratively deforms the initial contour so that it is closer to pixel with higher gradient. In order to make the contour latch itself onto the sgementation part, we perform gradient magnitude square of that part, and blur it so that it acts as a force field on the contour, and the contour latches itself into the boundry, this is called the image energy. However, since this is a greedy algorithm we apply some constraints to it which makes it act in two ways:-
   1. It can act like a elastic rubber band and smooth to make it fit the shape of the object
   2. We can also make it act like a baloon where the inital contour is blown like a baloon.
+  
 These are basically the internal bending energy of the contour. Therefore, we calculate the bending energy of the contour which is the elastic and smoothness of the contour, and add it with the image energy, to get the total energy. This is the general idea of how the contour works.
 
 WHAT THIS PROJECT REPOSITORY CONTAINS
